@@ -24,24 +24,27 @@
     footskip=.5cm
   }
 
-%%% Text Styles %%%
+\newcommand{\email}[1]{\newcommand{\@email}[1]{#1}}
+\newcommand{\link}[1]{\newcommand{\@link}[1]{#1}}
+\newcommand{\phone}[1]{\newcommand{\@phone}[1]{#1}}
+\newcommand{\area}[1]{\newcommand{\@area}[1]{#1}}
+
+\makeatletter
+\newcommand{\makeheader}{%
+  \customtitle{\@author}{%
+    \@email{} | %
+    \@link{} | %
+    \@phone{} | %
+    \@area{} %
+  }
+}
+
 \newcommand{\customtitle}[2]{%
   {\noindent\color{accent}\fontsize{18}{21.6}\textbf{#1}}%
   \hfill {\footnotesize #2}%
-  \rule[0.5cm]{6.5in}{0.025cm}%
+  \rule[0.5cm]{7in}{0.025cm}%
   \vspace{-0.75cm}%
 }
-
-\newcommand{\myheader}{%
-  \customtitle{David Connell}{%
-  dconnell1@hawk.iit.edu |                     % Email
-  github.com/DavidRConnell |                   % github
-  614.558.1522 |                               % Phone
-  Chicago, IL.                                 % Area
-}
-}
-
-\newcommand*{\mainheading}[1]{{\noindent\color{accent} \textsc{#1}} \\}
-\newcommand*{\position}[2]{\noindent\textbf{#1 \hfill #2}}
+\makeatother
 
 \pagenumbering{gobble}
