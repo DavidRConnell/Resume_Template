@@ -1,4 +1,4 @@
-\ProvidesPackage{jobstyle}
+\ProvidesPackage{resumestyle}
 
 %%% Get Gothic font %%%
 \usepackage[T1]{fontenc}
@@ -8,9 +8,9 @@
 %%% Packages %%%
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
-  \definecolor{crimson}{HTML}{B22222}  % NOTE: To change the color replace
-                                       % the third value with the HTML code
-                                       % for the desired color.
+  \definecolor{accent}{HTML}{B22222}
+
+\newcommand{\setaccent}[1]{\redefinecolor{accent}{HTML}{#1}}
 
 \usepackage{amssymb}
   \renewcommand\labelitemi{\fontsize{4pt}{4.8pt}$^{\blacksquare}$}   % Change bullet point symbol.
@@ -26,7 +26,7 @@
 
 %%% Text Styles %%%
 \newcommand{\customtitle}[2]{%
-  {\noindent\color{crimson}\fontsize{18}{21.6}\textbf{#1}}%
+  {\noindent\color{accent}\fontsize{18}{21.6}\textbf{#1}}%
   \hfill {\footnotesize #2}%
   \rule[0.5cm]{6.5in}{0.025cm}%
   \vspace{-0.75cm}%
@@ -36,13 +36,12 @@
   \customtitle{David Connell}{%
   dconnell1@hawk.iit.edu |                     % Email
   github.com/DavidRConnell |                   % github
-  % linkedin.com/in/dconnell1 |                  % LinkedIn
   614.558.1522 |                               % Phone
   Chicago, IL.                                 % Area
 }
 }
 
-\newcommand*{\mainheading}[1]{{\noindent\color{crimson} \textsc{#1}} \\}
+\newcommand*{\mainheading}[1]{{\noindent\color{accent} \textsc{#1}} \\}
 \newcommand*{\position}[2]{\noindent\textbf{#1 \hfill #2}}
 
 \pagenumbering{gobble}
